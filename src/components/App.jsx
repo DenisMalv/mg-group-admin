@@ -27,7 +27,11 @@ const App = () => {
       {/* <Suspense fallback={<div style={{opacity:0.2}}>123</div>}> */}
         <Routes>
           <Route path="/" element={<AuthLayout />}>
-            {/* <Route index element={<HomePage />} /> */}
+            <Route index element={
+                <PublicRoute>
+                   <LoginPage />
+                </PublicRoute>} 
+            />
             <Route
               path="register"
               element={

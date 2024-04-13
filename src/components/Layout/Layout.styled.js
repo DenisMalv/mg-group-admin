@@ -40,9 +40,12 @@ export const StyledNavLink = styled(NavLink)`
 
   padding:8px 24px 8px 0px;
 
+
+
   &.active{
     background-color: red;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 
 `
