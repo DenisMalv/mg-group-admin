@@ -1,5 +1,6 @@
 import React from 'react';
-import { lazy, Suspense } from 'react';
+// import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Layout from './Layout/Layout';

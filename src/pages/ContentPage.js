@@ -4,7 +4,7 @@
 
 const ContentPage = () => {
   // const isLogin = useSelector(getToken);
-  const isLogin = true;
+  // const isLogin = true;
 
   return (
     <>
