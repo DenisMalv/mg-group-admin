@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework=self.webpackChunkreact_homework||[]).push([[762],{762:(e,r,a)=>{a.r(r),a.d(r,{default:()=>t});var c=a(184);const t=()=>(0,c.jsx)(c.Fragment,{children:"Security page"})}}]);
+//# sourceMappingURL=762.fb822db3.chunk.js.map
