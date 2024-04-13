@@ -20,7 +20,7 @@ const Layout = () => {
     <LayoutContainer>
       <Sidebar>
         <div>
-        <a href="#" className='sidebar-logo'>
+        <a href="/" className='sidebar-logo'>
           <svg width="112" height="56" viewBox="0 0 112 56" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0_564_9857)">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M6 0L32.037 28.2205C37.1211 22.7101 39.0328 20.4102 43 16.1102V25.2858L32.037 37.0394L10.9011 14.1102V56H6V0Z" fill="#F6F7F7"/>
