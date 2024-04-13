@@ -1,0 +1,98 @@
+// font family
+$main:"M PLUS 1p", sans-serif;
+$russo:"Russo One", sans-serif;
+
+// transition
+$transition: all 0.3s ease-out;
+$transition-burger: all 0.5s ease-out;
+
+// text
+$black:#000;
+$white:#fff;
+$white-text: #F6F7F7;
+$main-text:#C2CDC6;
+$error-text:#DD7A02;
+
+$hover-accent-text: #F9A207;
+$active-accent-text: #FFD74A;
+
+$input-select-text:#171C1A;
+$about-us-subheader-text:#FFC935;
+$input-label-text:#E1E6E3;
+$input-placeholder-text:#73877B;
+
+
+
+// buttons
+$btn-primary-text:#171C1A;
+$btn-primary-bg:#FFC935;
+$btn-primary-accent-bg:#F9A207;
+$btn-primary-active-bg:#FFD74A;
+$btn-primary-disable-bg:#333C38;
+
+
+$btn-secondary-text:#F6F7F7;
+$btn-secondary-accent-text:#171C1A;
+$btn-secondary-border:1px solid $white-text;
+$btn-secondary-accent-border:1px solid #FFD74A;
+$btn-secondary-accent-bg:#FFD74A;
+$btn-secondary-desktop-text:#FFC935;
+$btn-secondary-desktop-border:1px solid #FFC935;
+
+$btn-pop-up-close: #73877B;
+
+// tabs 
+$tab-bg:#5C7065;
+$tab-color-text: #F6F7F7;
+$tab-border:1px solid #5C7065;
+
+$tab-active-text: #5C7065;
+$tab-active-bg:#F6F7F7;
+$tab-active-border: 1px solid #5C7065;
+
+// pagination
+$pagination-bg:#48594F;
+$pagination-text:#F6F7F7;
+$pagination-active-bg:#F6F7F7;
+$pagination-active-text:#48594F;
+
+
+// pref/about-us card
+$pref-card-border: clamp(1px,1vw,2px) solid #73877B;
+$pref-card-circle:#FFD74A;
+$about-us-border: clamp(2px,1vw,1px) solid #73877B;
+
+
+// frames
+$frame-rad-12:12px;
+$frame-rad-16:16px;
+$frame-rad-20:20px;
+$frame-rad-24:24px;
+$frame-rad-40:40px;
+
+// background
+$card-bg:#283935;
+$slider-bg:#3C4942;
+$main-bg:#182825;
+
+
+// calculator
+$calc-type-active-bg: #5C7065;;
+$calc-type-border:1px solid #73877B; 
+
+$calc-step-non-active: #5C7065;
+$calc-step-active-text: #171C1A;
+$calc-step-active-bg: #F6F7F7;
+$calc-step-active-border: #F6F7F7;
+$calc-step-svg: #C2CDC6;
+
+$calc-step-two-active-text:#FFE888;
+$calc-step-two-border-active-img:2px solid #FFE888;
+
+
+
+// modal
+$modal-bgd: #4f5551b3;
+
+
+
