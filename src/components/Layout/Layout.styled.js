@@ -133,12 +133,12 @@ export const StyledNavLink = styled(NavLink)`
 // `;
 
 export const MainContent = styled.main`
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-   rgb(255 255 255 / 0%) 0%, rgb(121 255 251 / 85%) 49%, rgb(255 255 255 / 0%) 100% );
-  );
-  min-height: 84.3vh;
-  font-family: Roboto;
-  padding:20px 0
+  // background: rgb(255, 255, 255);
+  // background: linear-gradient(
+  //   0deg,
+  //  rgb(255 255 255 / 0%) 0%, rgb(121 255 251 / 85%) 49%, rgb(255 255 255 / 0%) 100% );
+  // );
+  // min-height: 84.3vh;
+  // font-family: Roboto;
+  // padding:20px 0
 `;

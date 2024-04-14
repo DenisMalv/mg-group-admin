@@ -1,26 +1,19 @@
-import { Container } from 'components/App.styled';
+// import { Container } from 'components/App.styled';
 // import { AppBar } from 'components/AppBar/AppBar';
 // import { Header, Footer, MainContent } from './Layout.styled';
-import { MainContent } from './Layout.styled';
+// import { MainContent } from './Layout.styled';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 // import Loader from 'components/Loader/Loader';
 
-const AuthLayout = () => {
+const AuthLayout = ({children}) => {
   return (
-    <>
-        <Container>
+    <div>
           <div>Logo</div>
-        </Container>
-      <MainContent>
-        <Container>
-          <Suspense fallback={<div>loader</div>}>
-          
-            <Outlet />
+          <Suspense fallback={<div>LOADING</div>}>
+            <Outlet/>
           </Suspense>
-        </Container>
-      </MainContent>
-    </>
+    </div>
   );
 };
 

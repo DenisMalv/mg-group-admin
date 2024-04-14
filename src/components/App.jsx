@@ -1,11 +1,15 @@
 import React from 'react';
-// import { lazy, Suspense } from 'react';
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Layout from './Layout/Layout';
 import AuthLayout from './Layout/AuthLayout';
-// import Loader from './Loader/Loader';
+
+
+import Page404 from 'pages/Page404.js';
+
+import PrivateRoute from 'pages/PrivateRoute.js';
+import PublicRoute from 'pages/PublicRoute.js';
 
 const DashboardPage = lazy(() => import('pages/DashboardPage.js'));
 const ContentPage = lazy(() => import('pages/ContentPage.js'));
@@ -16,99 +20,40 @@ const SupportPage = lazy(() => import('pages/SupportPage.js'));
 
 const RegisterPage = lazy(() => import('pages/RegisterPage.js'));
 const LoginPage = lazy(() => import('pages/LoginPage.js'));
-const Page404 = lazy(() => import('pages/Page404.js'));
-
-const PrivateRoute = lazy(() => import('pages/PrivateRoute.js'));
-const PublicRoute = lazy(() => import('pages/PublicRoute.js'));
 
 const App = () => {
+
   return (
-    <>
-      {/* <Suspense fallback={<div style={{opacity:0.2}}>123</div>}> */}
-        <Routes>
-          <Route path="/" element={<AuthLayout />}>
-            <Route index element={
-                <PublicRoute>
-                   <LoginPage />
-                </PublicRoute>} 
-            />
-            <Route
-              path="register"
-              element={
-                <PublicRoute>
-                    <RegisterPage />
-                </PublicRoute>
-              }
-            />
-            <Route
-              path="login"
-              element={
-                <PublicRoute>
-                   <LoginPage />
-                </PublicRoute>
-              }
-            />
+  <>
+    <Routes>
+      {/* Publick routes */}
+      <Route element={<PublicRoute/>}>
+        <Route element={<AuthLayout/>}>
+          <Route path="/login" element={<LoginPage />}/>
+          <Route path="/register" element={<RegisterPage />}/>
+        </Route>
+      </Route>
+
+
+      {/* Private routes */}
+      <Route path="/" element={<PrivateRoute/>}>
+          <Route element={<Layout/>}>
+            <Route path="dashboard" element={<DashboardPage/>} />
+            <Route path="content" element={<ContentPage/>} />
+            <Route path="calculation" element={<CalculationPage/>} />
+            <Route path="users" element={<UsersPage/>} />
+            <Route path="security" element={<SecurityPage/>} />
+            <Route path="support" element={<SupportPage/>} />
           </Route>
+      </Route>
 
 
-          <Route path="/" element={<Layout />}>
-            <Route
-              path="dashboard"
-              element={
-                <PrivateRoute>
-                  <DashboardPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="content"
-              element={
-                <PrivateRoute>
-                  <ContentPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="calculation"
-              element={
-                <PrivateRoute>
-                  <CalculationPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="users"
-              element={
-                <PrivateRoute>
-                  <UsersPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="security"
-              element={
-                <PrivateRoute>
-                  <SecurityPage />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="support"
-              element={
-                <PrivateRoute>
-                  <SupportPage />
-                </PrivateRoute>
-              }
-            />
-          </Route>
-
-          <Route path="*" element={<Page404 />} />
-          
-        </Routes>
-      {/* </Suspense> */}
-    </>
+      {/* Page not Found */}
+      <Route path="*" element={<Page404 />} />
+      
+    </Routes>
+  </>
   );
-  // }
 };
 
 export default App;
