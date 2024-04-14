@@ -1,0 +1,28 @@
+@import '../../styles/utils/vars';
+
+// ========= LAYOUT 
+
+.auth-layout{
+    
+  display:flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  width:100%;
+  height:100vh;
+}
+
+.auth-logo{
+  position: absolute;
+  top: 48px;
+  left: 0;
+}
+
+
+
+
+
+
+
