@@ -1,17 +1,13 @@
 // import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import {  Navigate, Outlet, useLocation } from 'react-router-dom';
 // import { getToken } from 'redux/tokenSlice/tokenSlice';
 
 function PrivateRoute({ children }) {
   // const isLogin = useSelector(getToken);
-  // const navigate = useNavigate()
+
   const isLogin = false;
   let location = useLocation();
-
-  // useEffect(()=>{
-  //   if(isLogin && location.pathname)
-  // },[])
 
   return (
   <>
