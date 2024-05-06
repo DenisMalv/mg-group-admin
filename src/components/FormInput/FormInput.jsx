@@ -1,10 +1,18 @@
-import React,{} from 'react';
+import React,{ useRef } from 'react';
 
 import Icon from 'components/Icons/IconSprite';
 
-const FormInput = ({area, data,updData,  isShow, setIsShow, error, setError,errorMessage})=>{
+const FormInput = ({title, name, classList, type, value, handleInput, restore, area, data,updData,  isShow, setIsShow, error, setError,errorMessage})=>{
 
-    
+    const input = useRef()
+
+    const handleShowPass =(e)=>{
+        if(input.current.type ==='password'){
+            input.current.type = 'text'
+        }else{
+            input.current.type = 'password'
+        }
+    }
 
     // useEffect(()=>{
     //     setTimeout(()=>{setIsShow(true)},20)
@@ -12,17 +20,36 @@ const FormInput = ({area, data,updData,  isShow, setIsShow, error, setError,erro
 
     return(
             // <div className={`input-label ${isShow ? 'show' : 'hide'}`} >
-            <div className={`input-label 'show' `} >
-                <span className='input-label-text'>Площа, кв.м.</span>
+            <div className={`input-label ${classList}`} >
+                <span className='input-label-text'>{title}</span>
                
                 <div className={`input-wrapper`}> 
 
-                    <input className={`form-input ${error ? 'error' : ''}`} name={area} id={area} type='number' onChange={(e)=>updData(area,e.target.value)} value={data} placeholder='Введіть email'/>
+                    <input value={value} onChange={(e)=>handleInput(e,name)} className={`form-input ${error[name] ? 'error' : ''}`} type={type}  placeholder={`Введіть ${name === 'email' ? 'email' : 'пароль'}`} ref={input}/>
                     
-                    <Icon classlist={`form-input-icon ${error ? 'error' : 'hide'}`} id={`${area}-icon`} name="warning" color="#DD7A02" width="24" height="24"/>
+                    {name ==='email' && <Icon classlist={`form-input-icon ${error[name] ? 'error' : 'hide'}`} id={`warning`} name="warning" color="#DD7A02" width="24" height="24"/>}
+                    {name ==='password' && <Icon classlist={`form-input-icon ${error[name] ? 'error' : 'hide'}`} id={`warning`} name="eye-open" stroke="#DD7A02" color='#DD7A02' width="24" height="24" onClick={handleShowPass}/>}
 
                 </div>
-                <p className={`error-message ${error ? 'error' : ''}`}>{errorMessage}</p>
+                {
+                    name ==='email' && <p className={`error-message ${error[name] ? 'error' : ''}`}>{errorMessage}</p>
+                }
+                {
+                    name ==='password' && 
+                    <ul className={`error-message list ${error[name] ? 'error' : ''}`}>
+                        <li >Пароль має містити мінімум 8 символів</li>
+                        <li >Великі та малі літері</li>
+                        <li >Має містити як мінімум одну цифру</li>
+                    </ul>
+                }
+                {
+                    restore && 
+                    <ul className={`error-message list restore`}>
+                        <li >Пароль має містити мінімум 8 символів</li>
+                        <li >Великі та малі літері</li>
+                        <li >Має містити як мінімум одну цифру</li>
+                    </ul>
+                }
                 
             </div>
        

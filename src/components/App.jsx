@@ -2,8 +2,8 @@ import React from 'react';
 import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Layout from './Layout/Layout';
-import AuthLayout from './Layout/AuthLayout';
+import Layout from '../Layout/Layout';
+import AuthLayout from '../Layout/AuthLayout';
 
 
 import Page404 from 'pages/Page404.js';

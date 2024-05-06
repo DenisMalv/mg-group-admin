@@ -1,0 +1,14 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixin';
+
+.login-social-descr{
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.login-social-links-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}

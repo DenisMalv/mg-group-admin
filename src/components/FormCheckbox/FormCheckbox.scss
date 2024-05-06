@@ -1,0 +1,63 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixin';
+
+.checkbox-wrapper{
+    display: flex;
+    align-items: center;
+
+    margin-left: 12px;
+
+
+}
+
+.checkbox-input-wrapper{
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $main-text;
+    border-radius: 4px;
+
+    transition: $transition;
+
+    cursor: pointer;
+
+    // &.checked{
+    //     // width: 24px;
+    //     // height: 24px;
+    // }
+}
+
+
+.checkbox-input{
+    display: none;
+}
+
+
+.checkbox-label{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+
+    height: 24px;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    cursor: pointer;
+}
+
+.checkbox-input-icon{
+        position: absolute;
+        top:-5px;
+        left:-3px;
+
+        opacity: 0;
+
+        transition: $transition;
+
+        
+        &.checked{
+            opacity: 1;
+        }
+    
+}

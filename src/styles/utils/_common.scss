@@ -144,8 +144,14 @@ h4{
   padding-bottom: clamp(32px, 0.4rem + 6.52vw, 56px);
 }
 
+.mb-16{
+  margin-bottom: 16px;
+}
 .mb-24{
   margin-bottom: 24px;
+}
+.mb-32{
+  margin-bottom: 32px;
 }
 
 .mb-24-to-32{
@@ -209,21 +215,39 @@ h4{
 
 // error
 .error-message{
-  position: absolute;
-  bottom: -28px;
-  left: 24px;
+  // position: absolute;
+  // bottom: -28px;
+  // left: 24px;
+  // margin-top: 12px;
+  margin-left: 24px;
 
   font-size: 12px;
   line-height: 16px;
   color: $error-text;
   opacity: 0;
 
-  margin-top: 12px;
+  height: 100%;
+  max-height: 0px;
+  overflow: hidden;
 
   transition: $transition;
+
+  &.list{
+    list-style: disc;
+    margin-left: 0;
+    padding-left: 36px;
+  }
+  &.list.restore{
+    opacity: 1;
+    margin-top: 12px;
+    max-height: 50px;
+    color: $forgot-text;
+  }
 }
 .error-message.error{
   opacity: 1;
+  margin-top: 12px;
+  max-height: 50px;
 }
 
 
