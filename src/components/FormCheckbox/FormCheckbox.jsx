@@ -1,4 +1,4 @@
-import React,{ useRef,useEffect } from 'react';
+import React,{ useEffect } from 'react';
 import './FormCheckbox.scss'
 
 import Icon from 'components/Icons/IconSprite';

@@ -1,7 +1,7 @@
 import React,{} from 'react';
 import './MainButton.scss'
 
-import Icon from 'components/Icons/IconSprite';
+
 
 const MainButton = ({title,type, data, classList,})=>{
 
