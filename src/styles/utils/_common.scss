@@ -144,6 +144,9 @@ h4{
   padding-bottom: clamp(32px, 0.4rem + 6.52vw, 56px);
 }
 
+.mb-12{
+  margin-bottom: 12px;
+}
 .mb-16{
   margin-bottom: 16px;
 }
@@ -242,6 +245,9 @@ h4{
     margin-top: 12px;
     max-height: 50px;
     color: $forgot-text;
+  }
+  &.list.restore.error{
+    color: $error-text;
   }
 }
 .error-message.error{

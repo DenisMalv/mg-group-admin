@@ -21,10 +21,9 @@
 
     cursor: pointer;
 
-    // &.checked{
-    //     // width: 24px;
-    //     // height: 24px;
-    // }
+    .error &{
+        border: 1px solid $error-text;
+    }
 }
 
 
@@ -38,12 +37,18 @@
     gap: 12px;
     align-items: center;
 
-    height: 24px;
+    // height: 24px;
 
     font-size: 16px;
     line-height: 20px;
 
     cursor: pointer;
+    transition: $transition;
+
+    &.error{
+        color: $error-text;
+        // border: 1px solid $error-text;
+    }
 }
 
 .checkbox-input-icon{

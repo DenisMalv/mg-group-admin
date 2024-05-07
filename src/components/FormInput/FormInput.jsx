@@ -35,7 +35,7 @@ const FormInput = ({title, name, classList, type, value, handleInput, restore, a
                     name ==='email' && <p className={`error-message ${error[name] ? 'error' : ''}`}>{errorMessage}</p>
                 }
                 {
-                    name ==='password' && 
+                    name ==='password' && !restore && 
                     <ul className={`error-message list ${error[name] ? 'error' : ''}`}>
                         <li >Пароль має містити мінімум 8 символів</li>
                         <li >Великі та малі літері</li>
@@ -44,7 +44,7 @@ const FormInput = ({title, name, classList, type, value, handleInput, restore, a
                 }
                 {
                     restore && 
-                    <ul className={`error-message list restore`}>
+                    <ul className={`error-message list restore ${error[name] ? 'error' : ''}`}>
                         <li >Пароль має містити мінімум 8 символів</li>
                         <li >Великі та малі літері</li>
                         <li >Має містити як мінімум одну цифру</li>

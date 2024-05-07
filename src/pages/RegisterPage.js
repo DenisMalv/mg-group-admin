@@ -1,9 +1,11 @@
-// import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+
+
+import RegisterForm from "components/RegisterForm/RegisterForm";
 
 const RegisterPage = () => {
   return (
     <div>
-      register page
+      <RegisterForm title='Вхід в акаунт' />
     </div>
   )
 };
