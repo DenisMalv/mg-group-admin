@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework=self.webpackChunkreact_homework||[]).push([[879],{8879:(e,a,r)=>{r.r(a),r.d(a,{default:()=>t});var c=r(184);const t=()=>(0,c.jsx)(c.Fragment,{children:"Calculation page"})}}]);
+//# sourceMappingURL=879.231ad1fe.chunk.js.map
