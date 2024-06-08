@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { Navigate, Outlet,useNavigate } from 'react-router-dom';
+import { Outlet,useNavigate } from 'react-router-dom';
 // import { getToken } from 'redux/tokenSlice/tokenSlice';
 import { getToken } from 'redux/user/userSlice';
 import { useGetUserQuery } from 'redux/auth/authAPI';
