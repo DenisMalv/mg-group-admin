@@ -10,7 +10,7 @@ import iconCheck from '../../img/icons/Check.svg'
 import Icon from 'components/Icons/IconSprite';
 
 // import { useLoginQuery } from 'redux/auth/loginAPI';
-import { useLoginMutation } from 'redux/auth/authAPI';
+import { useLoginMutation } from 'redux/authAPI/authAPI';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { isUser } from 'redux/user/userSlice';

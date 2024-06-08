@@ -6,7 +6,7 @@ import './Layout.scss'
 import { NavLink, Outlet } from 'react-router-dom';
 import { Suspense, useState } from 'react';
 import Icon from 'components/Icons/IconSprite';
-import { useCreateRegisterTokenMutation } from 'redux/auth/authAPI';
+import { useCreateRegisterTokenMutation } from 'redux/authAPI/authAPI';
 // import Loader from 'components/Loader/Loader';
 
 const navArr = [
@@ -72,8 +72,8 @@ const Layout = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Layout;
 

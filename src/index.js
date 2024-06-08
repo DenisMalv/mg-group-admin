@@ -17,7 +17,7 @@ ReactDOM.render(
      <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter basename="mg-group-admin">
         <App />
-      </BrowserRouter>,
+      </BrowserRouter>
      </PersistGate>
   </Provider>,
   document.getElementById('root')

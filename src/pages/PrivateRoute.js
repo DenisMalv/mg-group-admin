@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {  Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
 // import { getToken } from 'redux/tokenSlice/tokenSlice';
 import { getToken, isUser } from 'redux/user/userSlice';
-import { useGetUserQuery } from 'redux/auth/authAPI';
+import { useGetUserQuery } from 'redux/authAPI/authAPI';
 
 function PrivateRoute({ children }) {
   // const user = useSelector(getUser)

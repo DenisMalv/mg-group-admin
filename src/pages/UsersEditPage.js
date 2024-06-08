@@ -8,7 +8,7 @@ import { useGetUsersQuery } from "redux/usersAPI/usersAPI";
 
 
 
-const UsersPage = () => {
+const UsersEditPage = () => {
 
   const {data,isLoading,isError} = useGetUsersQuery()
 
@@ -29,4 +29,4 @@ const UsersPage = () => {
   );
 };
 
-export default UsersPage;
+export default UsersEditPage;

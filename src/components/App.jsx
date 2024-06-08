@@ -16,6 +16,7 @@ const DashboardPage = lazy(() => import('pages/DashboardPage.js'));
 const ContentPage = lazy(() => import('pages/ContentPage.js'));
 const CalculationPage = lazy(() => import('pages/CalculationPage.js'));
 const UsersPage = lazy(() => import('pages/UsersPage.js'));
+const UsersEditPage = lazy(() => import('pages/UsersEditPage.js'));
 const SecurityPage = lazy(() => import('pages/SecurityPage.js'));
 const SupportPage = lazy(() => import('pages/SupportPage.js'));
 
@@ -44,6 +45,7 @@ const App = () => {
             <Route path="content" element={<ContentPage/>} />
             <Route path="calculation" element={<CalculationPage/>} />
             <Route path="users" element={<UsersPage/>} />
+            <Route path="users/:id" element={<UsersEditPage/>} />
             <Route path="security" element={<SecurityPage/>} />
             <Route path="support" element={<SupportPage/>} />
           </Route>

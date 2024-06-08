@@ -4,7 +4,7 @@ import './RegisterConfirm.scss'
 import iconCheck from '../../img/icons/Check.svg'
 import Icon from 'components/Icons/IconSprite';
 import { useNavigate,useParams } from 'react-router-dom';
-import { useConfirmEmailQuery } from 'redux/auth/authAPI';
+import { useConfirmEmailQuery } from 'redux/authAPI/authAPI';
 
 const RegisterConfirm = () => {
   const {confirmToken} = useParams()

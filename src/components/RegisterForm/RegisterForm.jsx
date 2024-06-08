@@ -10,7 +10,7 @@ import iconCheck from '../../img/icons/Check.svg'
 import Icon from 'components/Icons/IconSprite';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { useRegisterMutation } from 'redux/auth/authAPI';
+import { useRegisterMutation } from 'redux/authAPI/authAPI';
 
 const RegisterForm = ({title}) => {
   const [register, {isLoading}] = useRegisterMutation()

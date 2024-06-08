@@ -1,5 +1,6 @@
 import {configureStore } from '@reduxjs/toolkit'
-import { AuthApi } from './auth/authAPI'
+import { AuthApi } from './authAPI/authAPI'
+import { UsersApi } from './usersAPI/usersAPI';
 // import { tokenSliceReducer } from './tokenSlice'
 // import { userSliceReducer } from './user/userSlice'
 import { persistedUserAuthReducer } from './user/userSlice'
@@ -19,7 +20,8 @@ export const store = configureStore({
     reducer:{
         // user:userSliceReducer, // no ls
         user:persistedUserAuthReducer, // ls
-        [AuthApi.reducerPath]: AuthApi.reducer
+        [AuthApi.reducerPath]: AuthApi.reducer,
+        [UsersApi.reducerPath]:UsersApi.reducer
     },
     // middleware: (getDefaultMiddleware)=> getDefaultMiddleware().concat(AuthApi.middleware)
     middleware: (getDefaultMiddleware)=> [...getDefaultMiddleware({
@@ -28,6 +30,7 @@ export const store = configureStore({
           },
         }),
         AuthApi.middleware,
+        UsersApi.middleware,
     ],
 })
 

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { Outlet,useNavigate } from 'react-router-dom';
 // import { getToken } from 'redux/tokenSlice/tokenSlice';
 import { getToken } from 'redux/user/userSlice';
-import { useGetUserQuery } from 'redux/auth/authAPI';
+import { useGetUserQuery } from 'redux/authAPI/authAPI';
 import { useEffect } from 'react';
 
 const PublicRoute = ({ children }) => {

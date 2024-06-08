@@ -1,0 +1,75 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixin';
+
+
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 12px;
+
+    width: 100%;
+    padding: 12px 12px 12px 24px;
+    background-color: $slider-bg;
+
+    border-radius: 12px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+
+    color: $grey-text;
+
+    transition: $transition;
+    
+    &:hover{
+        background-color: $tab-bg;
+    }
+
+}
+
+.users-item-content{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  
+
+    &:first-child{
+        flex-basis: 33%;
+    }
+    &:nth-child(2){
+        flex-basis: 26%;
+    }
+    &:last-child{
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 12px;
+        flex-basis: 26%;
+    }
+
+}
+
+.user-item-name{
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.4;
+
+    color: $white-text;
+}
+
+.users-item-role{
+    font-size: 16px;
+    line-height: 1.25;
+    color: $white-text;
+}
+
+.users-item-date{
+    font-size: 16px;
+    line-height: 1.25;
+    color: $white-text;
+}
+
+
