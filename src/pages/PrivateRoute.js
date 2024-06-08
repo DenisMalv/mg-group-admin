@@ -1,13 +1,35 @@
-// import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 // import { useEffect } from 'react';
-import {  Navigate, Outlet, useLocation } from 'react-router-dom';
+import {  Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
 // import { getToken } from 'redux/tokenSlice/tokenSlice';
+import { getToken, isUser } from 'redux/user/userSlice';
+import { useGetUserQuery } from 'redux/auth/authAPI';
 
 function PrivateRoute({ children }) {
-  // const isLogin = useSelector(getToken);
+  // const user = useSelector(getUser)
+  const isLogin = useSelector(getToken);
 
-  const isLogin = false;
+  const {data} = useGetUserQuery()
+  const dispatch = useDispatch()
+  
+  console.log('private',isLogin)
+  // const isLogin = false;
   let location = useLocation();
+  const navigate = useNavigate()
+
+  useEffect(()=>{
+    try {
+      if(!data.user){
+        dispatch(isUser({
+          token:null,
+          user:null
+        }))
+        navigate('/login')
+      }
+    } catch (error) {
+    }
+  },[data, dispatch, navigate])
 
   return (
   <>

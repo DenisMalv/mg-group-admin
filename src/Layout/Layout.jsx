@@ -4,8 +4,9 @@
 // import { LayoutContainer, Sidebar,SidebarNavList, StyledNavLink, } from './Layout.styled';
 import './Layout.scss'
 import { NavLink, Outlet } from 'react-router-dom';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import Icon from 'components/Icons/IconSprite';
+import { useCreateRegisterTokenMutation } from 'redux/auth/authAPI';
 // import Loader from 'components/Loader/Loader';
 
 const navArr = [
@@ -18,6 +19,25 @@ const navArr = [
 ]
 
 const Layout = () => {
+  const [createregisterToken,{isLoading}] = useCreateRegisterTokenMutation()
+
+  const [createdToken,setCreatedToken] = useState('')
+
+
+  const handleCreateRegisterToken = async ()=>{
+    try {
+      const res = await createregisterToken()
+      if(res){
+        setCreatedToken(`http://localhost:3000/mg-group-admin/register/${res.data.token}`)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+    
+  }
+
+
+
   return (
     <div className='layout'>
       <div className='sidebar'>
@@ -39,9 +59,10 @@ const Layout = () => {
             <button >
               <Icon stroke='currentColor'   name='search' width='24' height='24'/>
             </button>
-            <button >
+            <button onClick={handleCreateRegisterToken}>
               <Icon stroke='currentColor'   name='plus' width='24' height='24'/>
             </button>
+            <p>{isLoading? 'Loading...' : createdToken}</p>
           </div>
         </div>
         <div className='main-content'>

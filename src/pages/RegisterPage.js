@@ -5,7 +5,7 @@ import RegisterForm from "components/RegisterForm/RegisterForm";
 const RegisterPage = () => {
   return (
     <div>
-      <RegisterForm title='Вхід в акаунт' />
+      <RegisterForm title='Реєстрація' />
     </div>
   )
 };

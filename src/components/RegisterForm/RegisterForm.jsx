@@ -8,9 +8,13 @@ import LoginSocial from 'components/LoginSocial/LoginSocial';
 
 import iconCheck from '../../img/icons/Check.svg'
 import Icon from 'components/Icons/IconSprite';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+
+import { useRegisterMutation } from 'redux/auth/authAPI';
 
 const RegisterForm = ({title}) => {
+  const [register, {isLoading}] = useRegisterMutation()
+  const {registerToken} = useParams()
   const navigate = useNavigate()
   const [step,setStep] = useState(1)
   const [data,setData] = useState({
@@ -48,32 +52,57 @@ const RegisterForm = ({title}) => {
 
   }
 
-  const handleSubmit =(e)=>{
-    e.preventDefault();
+  const handleSubmit = async (e)=>{
+    try {
+      e.preventDefault();
 
-    if(data.email === ''){
-      setError((prev)=>({...prev, email:true}))
-    }
-    if(data.password === ''){
-      setError((prev)=>({...prev, password:true}))
-    }
-    if(data.terms === false){
-      setError((prev)=>({...prev, terms:true}))
-    }
-    if(data.personalData === false){
-      setError((prev)=>({...prev, personalData:true}))
-      return
+      if(data.email === ''){
+        setError((prev)=>({...prev, email:true}))
+      }
+      if(data.password === ''){
+        setError((prev)=>({...prev, password:true}))
+      }
+      if(data.terms === false){
+        setError((prev)=>({...prev, terms:true}))
+      }
+      if(data.personalData === false){
+        setError((prev)=>({...prev, personalData:true}))
+        return
+      }
+
+      const newUser = {
+        email:data.email,
+        password:data.password
+      }
+
+      const res = await register({
+        registerToken,
+        newUser
+      })
+
+      if(res){
+        setStep(2)
+        setData({
+          email:'',
+          password:'',
+          terms:false,
+          personalData:false,
+        })
+      }
+    } catch (error) {
+        console.log(error)
     }
   }
 
 
   return (
     <div className='form-container bg-card br-24'>
+      {isLoading && <h1>loding</h1>}
       {step===1 &&
         <form className='form-login' action="" onSubmit={handleSubmit}>
           <h3 className='form-title'>{title}</h3>
 
-          <FormInput title='Email' name='email' type='email'  classList="mb-16" value={data.email} handleInput={handleInput} error={error} errorMessage='Перевірте  коректність введення email'/>
+          <FormInput title='Email' name='email' type='text'  classList="mb-16" value={data.email} handleInput={handleInput} error={error} errorMessage='Перевірте  коректність введення email'/>
 
           <FormInput title="Пароль" name='password' type='password'  classList="mb-16" value={data.password} handleInput={handleInput} error={error} errorMessage='' restore/>
 

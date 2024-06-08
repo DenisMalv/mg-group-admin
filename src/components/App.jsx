@@ -30,7 +30,7 @@ const App = () => {
       <Route element={<PublicRoute/>}>
         <Route element={<AuthLayout/>}>
           <Route path="/login" element={<LoginPage />}/>
-          <Route path="/register" element={<RegisterPage />}/>
+          <Route path="/register/:registerToken" element={<RegisterPage />}/>
         </Route>
       </Route>
 

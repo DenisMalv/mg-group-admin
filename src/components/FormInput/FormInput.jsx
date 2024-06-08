@@ -7,6 +7,7 @@ const FormInput = ({title, name, classList, type, value, handleInput, restore, a
     const input = useRef()
 
     const handleShowPass =(e)=>{
+
         if(input.current.type ==='password'){
             input.current.type = 'text'
         }else{
@@ -28,7 +29,7 @@ const FormInput = ({title, name, classList, type, value, handleInput, restore, a
                     <input value={value} onChange={(e)=>handleInput(e,name)} className={`form-input ${error[name] ? 'error' : ''}`} type={type}  placeholder={`Введіть ${name === 'email' ? 'email' : 'пароль'}`} ref={input}/>
                     
                     {name ==='email' && <Icon classlist={`form-input-icon ${error[name] ? 'error' : 'hide'}`} id={`warning`} name="warning" color="#DD7A02" width="24" height="24"/>}
-                    {name ==='password' && <Icon classlist={`form-input-icon ${error[name] ? 'error' : 'hide'}`} id={`warning`} name="eye-open" stroke="#DD7A02" color='#DD7A02' width="24" height="24" onClick={handleShowPass}/>}
+                    {name ==='password' && <Icon classlist={`form-input-icon ${error[name] ? 'error' : 'hide pass'}`} id={`warning`} name="eye-open" stroke={`${error[name] ? "#DD7A02" : "#73877B"}`} color={`${error[name] ? "#DD7A02" : "#73877B"}`} width="24" height="24" onClick={handleShowPass}/>}
 
                 </div>
                 {
