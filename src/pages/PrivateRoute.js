@@ -18,18 +18,18 @@ function PrivateRoute({ children }) {
   let location = useLocation();
   const navigate = useNavigate()
 
-  // useEffect(()=>{
-  //   try {
-  //     if(!data.user){
-  //       dispatch(isUser({
-  //         token:null,
-  //         user:null
-  //       }))
-  //       navigate('/login')
-  //     }
-  //   } catch (error) {
-  //   }
-  // },[data, dispatch, navigate])
+  useEffect(()=>{
+    try {
+      if(!data.user){
+        dispatch(isUser({
+          token:null,
+          user:null
+        }))
+        navigate('/login')
+      }
+    } catch (error) {
+    }
+  },[data, dispatch, navigate])
 
   return (
   <>
