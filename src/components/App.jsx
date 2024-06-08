@@ -10,6 +10,7 @@ import Page404 from 'pages/Page404.js';
 
 import PrivateRoute from 'pages/PrivateRoute.js';
 import PublicRoute from 'pages/PublicRoute.js';
+import RegisterConfirmPage from 'pages/RegisterConfirmPage';
 
 const DashboardPage = lazy(() => import('pages/DashboardPage.js'));
 const ContentPage = lazy(() => import('pages/ContentPage.js'));
@@ -31,6 +32,7 @@ const App = () => {
         <Route element={<AuthLayout/>}>
           <Route path="/login" element={<LoginPage />}/>
           <Route path="/register/:registerToken" element={<RegisterPage />}/>
+          <Route path="/confirm/:confirmToken" element={<RegisterConfirmPage />}/>
         </Route>
       </Route>
 

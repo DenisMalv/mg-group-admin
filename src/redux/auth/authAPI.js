@@ -33,7 +33,8 @@ export const AuthApi = createApi({
                 url: 'login',
                 method:'POST',
                 body,
-            })
+            }),
+            invalidatesTags: ['userAuth'],
         }),
         getUser: build.query({
             query: body => ({
@@ -62,9 +63,17 @@ export const AuthApi = createApi({
             }),
             invalidatesTags: ['userAuth'],
         }),
+        confirmEmail: build.query({
+          query: body => ({
+            url: `/verify/${body}`,
+            method: 'GET',
+          }),
+          providesTags: ['userAuth'],
+          // invalidesTags: ['userAuth'],
+      }),
     })
 })
 
 
 // export const {useLoginQuery} = loginApi
-export const {useLoginMutation,useRegisterMutation,useLogOutMutation,useGetUserQuery,useCreateRegisterTokenMutation} = AuthApi
+export const {useLoginMutation,useRegisterMutation,useLogOutMutation,useGetUserQuery,useCreateRegisterTokenMutation,useConfirmEmailQuery} = AuthApi
