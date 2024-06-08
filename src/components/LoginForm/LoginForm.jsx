@@ -81,8 +81,8 @@ const LoginForm = ({title}) => {
   
        const res = await login(userData).unwrap();
        if (res.user) {
+        await dispatch(isUser(res));
         navigate('/dashboard');
-        dispatch(isUser(res));
       }
       
     } catch (error) {
