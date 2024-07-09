@@ -33,5 +33,5 @@ const userAuthPersistConfig = {
   );
 
 // Selectors
-export const getUser = state => state.user.user.user;
+export const getLogedUser = state => state.user.user.user;
 export const getToken = state => state.user.user.token;

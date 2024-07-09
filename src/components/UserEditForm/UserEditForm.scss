@@ -1,0 +1,20 @@
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixin';
+
+.user-edit-form{
+
+}
+
+.user-edit-form-input-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.user-edit-form-btn-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 16px;
+}

@@ -80,6 +80,7 @@ const LoginForm = ({title}) => {
       }
   
        const res = await login(userData).unwrap();
+       console.log(res)
        if (res.user) {
         await dispatch(isUser(res));
         navigate('/dashboard');

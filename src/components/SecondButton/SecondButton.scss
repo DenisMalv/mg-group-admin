@@ -1,0 +1,81 @@
+
+@import '../../styles/utils/vars';
+@import '../../styles/utils/mixin';
+
+.second-button{
+    // width: 100%;
+    padding: 12px 24px;
+
+    font-family: "M PLUS 1p", sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+
+    border:1px solid $btn-primary-bg;
+
+    background-color: $btn-primary-bg;
+
+    transition: $transition;
+
+    cursor: pointer;
+
+
+    &:hover,&:focus{
+        background-color: $btn-primary-accent-bg;
+        border:1px solid $btn-primary-bg;
+    }
+    &:active{
+        background-color: $btn-primary-active-bg;
+        border:1px solid $btn-primary-active-bg;
+    }
+
+    &:disabled{
+        background-color: $btn-primary-disable-bg;
+        color: $main-text;
+        cursor: default;
+    }
+
+
+
+}
+
+.second-button-white{
+
+      // width: 100%;
+      padding: 12px 24px;
+
+      font-family: "M PLUS 1p", sans-serif;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 500;
+      color: $main-text;
+  
+      border: $btn-secondary-border;
+
+  
+      background-color: transparent;
+  
+      transition: $transition;
+  
+      cursor: pointer;
+  
+  
+      &:hover,&:focus{
+        //   background-color: $btn-primary-accent-bg;
+          border:1px solid $btn-primary-bg;
+          color: $hover-accent-text;
+      }
+      &:active{
+        //   background-color: $btn-primary-active-bg;
+          border:1px solid $btn-primary-active-bg;
+          color: $active-accent-text;
+      }
+  
+      &:disabled{
+          background-color: $btn-primary-disable-bg;
+          color: $main-text;
+          cursor: default;
+      }
+  
+  
+}

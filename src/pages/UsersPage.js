@@ -4,6 +4,7 @@
 
 import List from "components/List/List";
 import ListItemUsers from "components/ListItemUsers/ListItemUsers";
+import { useNavigate } from "react-router-dom";
 import { useGetUsersQuery } from "redux/usersAPI/usersAPI";
 
 
@@ -11,9 +12,12 @@ import { useGetUsersQuery } from "redux/usersAPI/usersAPI";
 const UsersPage = () => {
 
   const {data,isLoading,isError} = useGetUsersQuery()
+  const navigate = useNavigate()
 
-  console.log(data)
-
+ 
+  const handleEditUser = (id) =>{
+    navigate(`/users/${id}`)
+  }
   return (
     <>
      {/* Users page       */}
@@ -22,7 +26,7 @@ const UsersPage = () => {
      {data && 
         <List>
           {data.map(({_id,name,email,role,lastLogined,verify,})=> 
-            <ListItemUsers key={_id}  id={_id} name={name} email={email} role={role} verify={verify} lastLogined={lastLogined}/> )}
+            <ListItemUsers key={_id}  id={_id} name={name} email={email} role={role} verify={verify} lastLogined={lastLogined} handleClick={handleEditUser}/> )}
         </List>
      }
     </>

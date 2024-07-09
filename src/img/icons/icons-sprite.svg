@@ -53,6 +53,12 @@
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.3333" d="M6 19c1.657 0 3-1.343 3-3s-1.343-3-3-3c-1.657 0-3 1.343-3 3s1.343 3 3 3z"></path>
 <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.3333" d="M26 19c1.657 0 3-1.343 3-3s-1.343-3-3-3c-1.657 0-3 1.343-3 3s1.343 3 3 3z"></path>
 </symbol>
+<symbol id="verified" viewBox="0 0 24 24">
+<path d="M23.016 12l-2.438-2.813 0.328-3.656-3.609-0.844-1.875-3.188-3.422 1.453-3.422-1.453-1.875 3.188-3.609 0.797 0.328 3.703-2.438 2.813 2.438 2.813-0.328 3.656 3.609 0.844 1.875 3.188 3.422-1.453 3.422 1.453 1.875-3.188 3.609-0.844-0.328-3.656zM10.078 16.734l-3.797-3.844 1.5-1.453 2.297 2.344 5.859-5.906 1.5 1.5z"></path>
+</symbol>
+<symbol id="select-arrow" viewBox="0 0 32 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.6667" d="M8 20l7.057-7.057c0.521-0.521 1.365-0.521 1.886 0l7.057 7.057"></path>
+</symbol>
 </defs>
 </svg>
 

@@ -43,8 +43,8 @@ export const UsersApi = createApi({
         }),
         changeUserRole: build.mutation({
           query: ({id,role})=> ({
-              url: `/${id}`,
-              method:'DELETE',
+              url: `/${id}/role`,
+              method:'PATCH',
               body:{
                 role
               },
@@ -53,8 +53,8 @@ export const UsersApi = createApi({
         }),
         changeUserEmail: build.mutation({
           query: ({id,email})=> ({
-              url: `/${id}`,
-              method:'DELETE',
+              url: `/${id}/email`,
+              method:'PATCH',
               body:{
                 email
               },
