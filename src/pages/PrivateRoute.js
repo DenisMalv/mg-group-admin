@@ -13,7 +13,7 @@ function PrivateRoute({ children }) {
   const {data} = useGetUserQuery()
   const dispatch = useDispatch()
   
-  console.log('private',isLogin)
+  // console.log('private',isLogin)
   // const isLogin = false;
   let location = useLocation();
   const navigate = useNavigate()

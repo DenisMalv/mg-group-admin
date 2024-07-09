@@ -4,8 +4,6 @@ export const AuthApi = createApi({
     reducerPath:'userAuth',
     baseQuery: fetchBaseQuery({baseUrl:'http://localhost:3030/api/auth/',
     prepareHeaders: (headers, { getState }) => {
-        console.log(headers)
-        console.log('login me pls auto');
         const token = getState().user.user.token;
   
         console.log(token);
