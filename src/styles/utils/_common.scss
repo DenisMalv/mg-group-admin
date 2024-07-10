@@ -275,6 +275,13 @@ h4{
     &.loader-overlay-show{
         opacity: 1;
     }
+
+    &.bread{
+      position: relative;
+      background-color: transparent;
+      width: 20px;
+      height: 20px;
+    }
 }
 
 

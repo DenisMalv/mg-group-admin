@@ -49,20 +49,6 @@ const Layout = () => {
       </div>
       <div className='layout-content'>
         <LayoutHeader createRegToken={handleCreateRegisterToken} isLoading={isLoading} createdToken={createdToken} />
-        {/* <div className='layout-head-container'>
-          <ul className='layout-bread-list'>
-            <li>bread1</li>
-          </ul>
-          <div className='layout-actions'>
-            <button >
-              <Icon stroke='currentColor'   name='search' width='24' height='24'/>
-            </button>
-            <button onClick={handleCreateRegisterToken}>
-              <Icon stroke='currentColor'   name='plus' width='24' height='24'/>
-            </button>
-            <p>{isLoading? 'Loading...' : createdToken}</p>
-          </div>
-        </div> */}
         <div className='main-content'>
           <Suspense 
             fallback={
@@ -78,7 +64,7 @@ const Layout = () => {
               />
           }
           >
-            <Outlet/>
+            <Outlet />
           </Suspense>
         </div>
       </div>

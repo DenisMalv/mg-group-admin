@@ -16,12 +16,15 @@ import { USER_ROLES } from 'data/constants';
 import SecondButton from 'components/SecondButton/SecondButton';
 import { useNavigate } from 'react-router-dom';
 import { useChangeUserEmailMutation, useChangeUserRoleMutation } from 'redux/usersAPI/usersAPI';
+import { useDispatch } from 'react-redux';
+import { clearEditedUser } from 'redux/users/usersSlice';
 
 
 const UserEditForm = ({userData}) => {
   // отримати залогіненого юзера 
   // const user = useSelector(getLogedUser)
   // console.log(user)
+  const dispatch = useDispatch()
   const modalOverlay = useRef(null)
   const navigate = useNavigate()
   const [newData,setNewData] = useState({
@@ -45,6 +48,7 @@ const UserEditForm = ({userData}) => {
     modalOverlay && modalOverlay.current?.classList.toggle('modal-overlay-show')
     setTimeout(()=>{
       setShowModal(false)
+      dispatch(clearEditedUser())
       navigate('/users')
     },330)
 
@@ -101,7 +105,7 @@ const UserEditForm = ({userData}) => {
             <SelectBox title='Роль' handleChange={handleChange} value={newData.role} error={newDataError.role} errorMessage={'Оберіть роль'} placeholder={'Оберіть роль'} options={USER_ROLES}/>
 
             <div className='user-edit-form-btn-wrapper gap-16-to-24'>
-              <SecondButton   title='Скасувати' type='button' classList='' handleClick={()=>navigate('/users')}/>
+              <SecondButton   title='Скасувати' type='button' classList='' handleClick={()=>{ dispatch(clearEditedUser()); navigate('/users')}}/>
               <SecondButton   title='Зберегти' type='button' classList=''  handleClick={handleSubmit}  accent/>
             </div>
 

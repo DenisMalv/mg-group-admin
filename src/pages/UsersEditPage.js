@@ -6,6 +6,9 @@ import { ThreeDots } from "react-loader-spinner";
 import UserEditForm from "components/UserEditForm/UserEditForm";
 import { useParams } from "react-router-dom";
 import { useGetUserByIdQuery } from "redux/usersAPI/usersAPI";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setEditedUser } from "redux/users/usersSlice";
 
 
 
@@ -15,7 +18,14 @@ import { useGetUserByIdQuery } from "redux/usersAPI/usersAPI";
 
 const UsersEditPage = () => {
   const {id} = useParams()
+  const dispatch = useDispatch()
   const {data,isLoading,isError} = useGetUserByIdQuery(id)
+
+  useEffect(()=>{
+    if(data && data.user){
+      dispatch(setEditedUser(data.user))
+    }
+  },[data, dispatch])
 
   // console.log(data)
 
@@ -33,7 +43,7 @@ const UsersEditPage = () => {
                 wrapperClass={`loader-overlay ${isLoading ? 'loader-overlay-show' : ''}`}
                 />}
      {isError && <h1>ErrorAPI !!! on UserEditPage</h1>}
-     {data && 
+     {data && data.user &&
         <UserEditForm userData={data.user} roles={''}/>
      }
     </>

@@ -4,22 +4,32 @@
 
 import List from "components/List/List";
 import ListItemUsers from "components/ListItemUsers/ListItemUsers";
+import { useEffect } from "react";
 import { ThreeDots } from "react-loader-spinner";
+import { useDispatch } from "react-redux";
 
 import { useNavigate } from "react-router-dom";
+import { setUsers,clearEditedUser } from "redux/users/usersSlice";
 import { useGetUsersQuery } from "redux/usersAPI/usersAPI";
 
 
 
 const UsersPage = () => {
-
-  const {data,isLoading,isError} = useGetUsersQuery()
+  const dispatch = useDispatch()
+  const {data=[],isLoading,isError} = useGetUsersQuery()
   const navigate = useNavigate()
-
  
   const handleEditUser = (id) =>{
+    dispatch(clearEditedUser())
     navigate(`/users/${id}`)
   }
+  
+  useEffect(()=>{
+    if(data){
+      dispatch(setUsers(data))
+    }
+  },[data, dispatch])
+
   return (
     <>
      {/* Users page       */}

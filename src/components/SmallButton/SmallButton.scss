@@ -31,4 +31,24 @@
         cursor: default;
     }
 
+    &.second-btn{
+        background-color: $btn-secondary-text;
+    }
+    &.second-btn:hover,&.second-btn:focus{
+        background-color: $btn-primary-accent-bg;
+    }
+    &.second-btn:active{
+        background-color: $btn-primary-active-bg;
+    }
+
+    &.btn-plus{
+        background-color: $btn-primary-disable-bg;
+    }
+    &.btn-plus:hover,&.btn-plus:focus{
+        background-color: $btn-primary-accent-bg;
+    }
+    &.btn-plus:active{
+        background-color: $btn-primary-active-bg;
+    }
+
 }
